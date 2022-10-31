@@ -2,12 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
-//import java.util.Timer;
 import javax.swing.Timer;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
-//import java.awt.event.KeyAdapter;
-//import java.awt.event.KeyEvent;
 
 public class GamePanel extends JPanel implements ActionListener {
 
@@ -43,8 +38,6 @@ public class GamePanel extends JPanel implements ActionListener {
    public void startGame(){
         newApple();
         running =true;
-//        timer = new Timer();
-//        timer.schedule(move(),delay);
        timer = new Timer(DELAY, this);
        timer.start();
 
@@ -71,8 +64,8 @@ public class GamePanel extends JPanel implements ActionListener {
                     g.fillRect(x[i],y[i],UNIT_SIZE,UNIT_SIZE);
 
                 }else{
-                   // g.setColor(new Color(45,180,0));
-                    g.setColor(new Color(random.nextInt(225),random.nextInt(225),random.nextInt(225)));
+                   // g.setColor(new Color(45,180,0));  ---> for single coloe  
+                    g.setColor(new Color(random.nextInt(225),random.nextInt(225),random.nextInt(225)));    // for multiple color
                     g.fillRect(x[i],y[i],UNIT_SIZE,UNIT_SIZE);
                 }
             }
